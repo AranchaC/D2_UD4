@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ValidacionTut3ApplicationTests {
+class FormGrasaCorporalApplicationTests {
 
 	@Test
 	void contextLoads() {
