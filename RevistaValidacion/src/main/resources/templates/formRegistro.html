@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Registro Revista</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Formulario de registro REVISTA</h1>
+	<h3>Introduce tus datos:</h3>
+    <form action="#" th:action="@{/registroRevista}" th:object="${persona}" method="post">
+		<fieldset>
+			<legend><strong> Datos personales</strong></legend>
+    		<p>Nombre: <input type="text" th:field="*{nombre}" /></p>		
+			<p th:if="${#fields.hasErrors('nombre')}" 
+                    	th:errors="*{nombre}">Nombre Error</p>
+            <p>Primer apellido: <input type="text" th:field="*{apellido1}" /></p>		
+			<p th:if="${#fields.hasErrors('apellido1')}" 
+                    	th:errors="*{apellido1}">Apellido1 Error</p>
+            <p>Segundo apellido: <input type="text" th:field="*{apellido2}" /></p>		
+			<p th:if="${#fields.hasErrors('apellido2')}" 
+                    	th:errors="*{apellido2}">Apellido2 Error</p>
+      		<p>Año de nacimiento: <input type="number" th:field="*{anyoNac}" /></p>		
+			<p th:if="${#fields.hasErrors('anyoNac')}" 
+                    	th:errors="*{anyoNac}">anyoNac Error</p>
+		   	<p>E-mail: <input type="text" th:field="*{email}" /></p>		
+			<p th:if="${#fields.hasErrors('email')}" 
+                    	th:errors="*{email}">email Error</p>
+      		<p>Contraseña: <input type="password" th:field="*{contrasena}" /></p>		
+			<p th:if="${#fields.hasErrors('contrasena')}" 
+                    	th:errors="*{contrasena}">contrasena Error</p>
+         	<p>Dirección: <input type="text" th:field="*{direccion}" /></p>		
+			<p th:if="${#fields.hasErrors('direccion')}" 
+                    	th:errors="*{direccion}">direccion Error</p>
+            <br>
+            <P>Sexo:</P>
+            <input type="radio" id="mujer" th:field="*{sexo}" value="mujer"/>
+	        <label for="mujer">Mujer</label>
+	        <input type="radio" id="hombre" th:field="*{sexo}" value="hombre"/>
+	        <label for="hombre">Hombre</label>           	
+                 	
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend><strong>Nivel estudios e intereses</strong></legend>
+			<label>Nivel de estudios:</label><br>
+            <input type="radio" th:field="*{estudios}" value="escolar"/>
+	        <label</label>Certificado escolar</label><br>
+	        <input type="radio" th:field="*{estudios}" value="eso"/>
+	        <label</label>Graduado en E.S.O.</label><br>
+	        <input type="radio" th:field="*{estudios}" value="bach"/>
+	        <label</label>Bachiller</label><br>
+	       	<input type="radio" th:field="*{estudios}" value="fpm"/>
+	        <label</label>Formación Profesiona GRADO MEDIO</label><br>
+	       	<input type="radio" th:field="*{estudios}" value="fpS"/>
+	        <label</label>Formación Profesiona GRADO SUPERIOR</label><br>
+	        <input type="radio" th:field="*{estudios}" value="diplo"/>
+	        <label</label>Diplomado</label><br>
+	        <input type="radio" th:field="*{estudios}" value="lic-doc"/>
+	        <label</label>Licenciado o Doctorado</label>
+	        <br>
+	        <br>
+	        <label>Recibir artículos sobre los siguientes temas:</label><br>
+	        <input type="checkbox" th:field="*{temas}" value="musica"/>
+	        <label>Música</label><br>
+	        <input type="checkbox" th:field="*{temas}" value="deportes"/>
+	        <label>Deportes</label><br>
+	        <input type="checkbox" th:field="*{temas}" value="cine"/>
+	        <label>Cine</label><br>
+	        <input type="checkbox" th:field="*{temas}" value="libros"/>
+	        <label>Libros</label><br>
+	        <input type="checkbox" th:field="*{temas}" value="cocina"/>
+	        <label>Cocina</label><br>
+	        <input type="checkbox" th:field="*{temas}" value="viajes"/>
+	        <label>Viajes</label>
+			<p th:if="${#fields.hasErrors('temas')}" 
+                    	th:errors="*{temas}">temas Error</p>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend><strong> Enviar formulario</strong></legend>
+			<p>¿Seguro que los datos son correctos?</p>
+			<input type="submit" value="Enviar" /> <input type="reset" value="Reset" />
+		</fieldset>
+    </form>
+</body>
+</html>

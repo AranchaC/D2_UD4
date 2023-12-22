@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Registro Revista</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Formulario de registro REVISTA</h1>
+	<h3>Introduce tus datos:</h3>
+    <p th:text="'Nombre: ' + ${persona.nombre}" />
+    <p th:text="'Primer Apellido: ' + ${persona.apellido1}" />
+    <p th:text="'Segundo Apellido: ' + ${persona.apellido2}" />
+    <p th:text="'Años de Nacimiento: ' + ${persona.anyoNac}" />
+    <p th:text="'E-mail: ' + ${persona.email}" />
+    <p th:text="'Contraseña: ' + ${persona.contrasena}" />
+    <p th:text="'Dirección: ' + ${persona.direccion}" />
+</body>
+</html>
