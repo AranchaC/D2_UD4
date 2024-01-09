@@ -12,8 +12,7 @@ public class ControladorFormulario {
 	@GetMapping("/saludo")
 	public String saludo(Model modelo) {
 		modelo.addAttribute("saludo", new Saludo());
-		return "saludo";
-		
+		return "saludo";	
 	}
 	
 	  @PostMapping("/saludo")
