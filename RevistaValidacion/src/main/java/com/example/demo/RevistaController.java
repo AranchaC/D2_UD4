@@ -16,27 +16,22 @@ public class RevistaController implements WebMvcConfigurer {
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/registroOK").setViewName("registroOK");
+		registry.addViewController("/registroRevista").setViewName("registroOK");
 	}
 	
 	@GetMapping("/registroRevista")
 	public String mostrarFormRegistro(Model model) {
 		model.addAttribute("persona", new Persona());
 		return "formRegistro";
-	}
+	}//getMapping
 	
 	@PostMapping("/registroRevista")
-	public String registroCorrecto(@Valid @ModelAttribute("persona") 
-		Persona persona, 
-			BindingResult bindingResult, Model model) {
+	public String registroCorrecto(@Valid @ModelAttribute("persona")
+		Persona persona, BindingResult bindingResult, Model model) {
 
 		if (bindingResult.hasErrors()) {
 			return "formRegistro";
 		}
-		
-		model.addAttribute("persona", persona);
-
-		return "redirect:/registroOK";
-	}
-
+		return "registroOK";
+	}//postMapping
 }

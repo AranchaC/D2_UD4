@@ -22,7 +22,7 @@ public class Persona {
     @Max(2005)
     private int anyoNac;
     
-	@Pattern(regexp = ".*@.*\\.(com|es)$")
+	@Pattern(regexp = ".*@.*\\.(com|es)$", message="Formato incorrecto.")
     private String email;
     
     @NotNull
@@ -31,12 +31,12 @@ public class Persona {
     private String sexo;
     
     @NotNull
-    @Size(min=8)
+    @Size(min=8, message="Dirección demasiada corta.")
     private String direccion;   
     private String estudios;
     
     @NotEmpty
-    @Size(min=2, max=4)
+    @Size(min=2, max=4, message="Selecciona entre 2 o 4 opciones")
     private String[] temas;
     
 	public String getNombre() {
