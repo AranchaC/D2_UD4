@@ -26,8 +26,10 @@ public class RevistaController implements WebMvcConfigurer {
 	}//getMapping
 	
 	@PostMapping("/registroRevista")
-	public String registroCorrecto(@Valid @ModelAttribute("persona")
-		Persona persona, BindingResult bindingResult, Model model) {
+	public String registroCorrecto(
+			@Valid @ModelAttribute("persona")Persona persona, 
+			BindingResult bindingResult, 
+			Model model) {
 
 		if (bindingResult.hasErrors()) {
 			return "formRegistro";
